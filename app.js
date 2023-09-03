@@ -11,7 +11,8 @@ var usersRouter = require('./routes/users');
 var adminRouter = require("./routes/admin");
 var apiindexrouter = require("./api/index");
 
-mongoose.connect("mongodb://127.0.0.1:27017/smartworkout");
+// mongoose.connect("mongodb://127.0.0.1:27017/smartworkout");
+mongoose.connect("mongodb+srv://ThweYee:309107@workout.1rnlbob.mongodb.net/?retryWrites=true&w=majority");
 var db = mongoose.connection;
 db.on(
   "error",console.error.bind(console,"Mongodb connection error at smart workout")
