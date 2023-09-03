@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+<script src="/javascripts/color-modes.js"></script>
+<link href="/stylesheets/bootstrap-icons.min.css" rel="stylesheet">
+
+  <title>Workout page</title>
+  
+  
+</head>
+    <% include ./partial/navbar %>
+<body>
+    <main>
+        <div class="container mt-5">
+            <h1 class="text-center text-warning">Workout</h1><br/>
+    <div class="row">
+        <% for(var i=0; i < workouts.length ; i++){%>
+            <div class="col-sm-12 col-md-6 col-lg">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/images/workout.jpeg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= workouts[i].title %></h5>
+                          <p class="fs-6" class="lh-sm">
+                            Type :
+                            <span class="fs-6 fw-light"><%= workouts[i].type %></span>
+                          </p>
+                          <p class="lh-sm fs-6">
+                            Categpry: <%= workouts[i].category %>
+                          </p>
+                          <p class="lh-sm">
+                            Description : <%= workouts[i].description %>
+                          </p>
+                          <a href="/workout/<%= workouts[i]._id %>"
+                            class="btn btn-primary rounded-pill">View the Challenge</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        <%}%>
+    </div>
+    </div>
+    </main>
+<% include ./partial/footer2 %>
+</body>
+</html>
